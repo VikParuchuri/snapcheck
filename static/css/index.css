@@ -1,0 +1,16 @@
+.center { float: none; margin-left: auto; margin-right: auto; }
+.red{color: #980000}
+.green{color: #009933}
+.social-media-buttons{
+    float: left;
+    list-style: none;
+    margin: 5px 0 20px 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul.social-media-buttons li{
+    display: block;
+    float: left;
+    margin-right: 10px;
+}

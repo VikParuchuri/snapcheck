@@ -1,0 +1,9 @@
+---
+- name: restart snapcheck
+  service: name=snapcheck state=restarted
+
+- name: restart celery
+  service: name=celery state=restarted
+
+- name: restart nginx
+  service: name=nginx state=restarted

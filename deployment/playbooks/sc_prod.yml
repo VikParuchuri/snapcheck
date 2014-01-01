@@ -1,0 +1,9 @@
+# ansible-playbook -vvv --user=ubuntu  sc_prod.yml -i ./ec2.py  -c ssh
+- hosts:
+    - tag_Group_snapcheck_prod
+  vars_files:
+    - "{{ secure_dir }}/vars/snapcheck_prod_vars.yml"
+    - "{{ secure_dir }}/users/users.yml"
+  roles:
+    - sc
+  sudo: True

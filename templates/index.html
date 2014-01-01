@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=175184656002590";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Has your Snapchat info been leaked?</h1>
+            <p class="lead">A few days ago, an exploit was <a href="http://www.zdnet.com/researchers-publish-snapchat-code-allowing-phone-number-matching-after-exploit-disclosures-ignored-7000024629/">published</a> that allowed any phone number and username from Snapchat to be accessed.  Today, <a href="http://thenextweb.com/insider/2014/01/01/hackers-allegedly-exploit-snapchat-security-hole-leak-4-6m-usernames-phone-numbers-online/#!q2wox">someone released</a> a full list of Snapchat users and their phone numbers.  The last two digits of the numbers are removed, with the option to request the full numbers.  This is scary, as it implies that the numbers could be sold.</p>
+                <p class="lead">Check if you were affected by entering your snapchat username or your phone number. </p>
+            <form role="form">
+                <div class="form-group" id="form-group-repo">
+                    <hr/>
+                    <label class="sr-only" for="username">Username</label>
+                    <input type="text" class="form-control input-lg" id="username" placeholder="Snapchat username">
+                    <hr/>
+                    <div class="center"><h4>Or</h4></div>
+                    <hr/>
+                    <label class="sr-only" for="phoneNumber">Phone number</label>
+                    <input type="text" class="form-control input-lg" id="phoneNumber" placeholder="Phone number">
+                    <hr/>
+                </div>
+                <button class="btn btn-primary ladda-button btn-lg" type="submit" id="info-submit-button" data-style="zoom-out"><span class="ladda-label">Check</span></button>
+                <span class="help-block" id="info-message"></span>
+            </form>
+        </div>
+    </div>
+    <hr/>
+    <div class="row social-media-row">
+        <div class="col-md-12">
+            <div class="btn-group btn-group-sm">
+                <ul class="social-media-buttons">
+                    <li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://www.snapcheck.org">Tweet</a></li>
+                    <li><div class="fb-share-button" data-href="http://www.snapcheck.org" data-type="button_count"></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <p>Made by <a href="https://twitter.com/VikParuchuri">Vik Paruchuri</a>.  Contact me on twitter with any questions or concerns.  The code is open source on <a href="https://github.com/VikParuchuri/snapcheck">Github</a></p>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-43473622-6', 'snapcheck.org');
+        ga('send', 'pageview');
+
+    </script>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Snapcheck -- has your snapchat info been leaked?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/journal/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "css/index.css" %}" rel="stylesheet">
+    <link href="{% static "css/ladda-themeless.min.css" %}" rel="stylesheet">
+
+    {% block additional_css %}
+    {% endblock %}
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/spin.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ladda.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/models.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+    <meta name="csrf-token" content="{{csrf_token}}">
+    {% block additional_js %}
+    {% endblock %}
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Snapcheck</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav">
+                <li {% if request.path == "/" %}class="current active"{% endif %}><a href="/">Home</a></li>
+                <li {% if request.path == "/about/" %}class="current active"{% endif %}><a href="/about/">About</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

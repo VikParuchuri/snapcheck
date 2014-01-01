@@ -1,0 +1,10 @@
+snapcheck_source_repo: ssh://git@github.com/VikParuchuri/snapcheck.git
+snapcheck_dir: $app_base_dir/snapcheck
+snapcheck_settings: snapcheck.aws
+nltk_data_dir: /usr/share/nltk_data
+snapcheck_branch: master
+nginx_listen_port: 80
+nginx_secure_port: 443 ssl
+gunicorn_port: 7999
+snapcheck_user: snapcheck
+site_name: snapcheck
