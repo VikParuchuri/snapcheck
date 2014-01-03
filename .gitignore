@@ -11,6 +11,7 @@ tmpfile
 !.vc
 db/*
 snapcheck/private.py
+snapcheck/local_aws.py
 cache/*
 staticfiles/*
 media/*
